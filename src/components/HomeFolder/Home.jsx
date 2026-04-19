@@ -50,7 +50,7 @@ function Home() {
                         <p className="p-5 text-sm font-bold">
                           {items.noteAddedDate}
                         </p>
-                        <div className="h-13 w-25 rounded-xl bg-black text-white flex font-bold items-center justify-center">
+                        <div className="h-13 w-25 rounded-xl bg-[#2A2A2A] text-white flex font-bold items-center justify-center">
                           Edit
                         </div>
                       </div>
