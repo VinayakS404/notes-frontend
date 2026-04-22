@@ -3,6 +3,8 @@ import HomeNavBar from "./HomeNaveBar.jsx";
 import HomeSearchDiv from "./HomeSearchDiv.jsx";
 import axios from "axios";
 import downIcon from "../../../assets/down.png";
+import fourSquare from "../../../assets/four-squares.png";
+import row from "../../../assets/row.png";
 
 function Home() {
   const [notes, setNotes] = useState([]);
@@ -44,22 +46,22 @@ const bgColors = {
                 <img
                   src={downIcon}
                   alt="back arrow"
-                  className="h-8 rotate-90 mt-"
+                  className="h-8 rotate-90 z-1"
                 />
                 <p className="text-2xl ">
                   <span className="text-[#7C7C7C]">Home</span> / All notes
                 </p>
               </div>
-              <div className="flex ">
+              <div className="flex items-center gap-3">
                 <img
-                  src={downIcon}
+                  src={row}
                   alt="back arrow"
-                  className="h-8 rotate-90 mt-"
+                  className="h-10  z-1 hover:bg-gray-200 p-1 rounded-md"
                 />
                 <img
-                  src={downIcon}
+                  src={fourSquare}
                   alt="back arrow"
-                  className="h-8 rotate-90 mt-"
+                  className="h-10 rotate-90 z-1 hover:bg-gray-200 p-1.5 rounded-md"
                 />
               </div>
             </div>
