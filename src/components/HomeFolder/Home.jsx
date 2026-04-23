@@ -67,13 +67,13 @@ const bgColors = {
             </div>
             <div>
               <div className=" flex gap-2 ">
-                <button className="bg-gray-100 border-2 border-gray-300 rounded-sm px-4 flex items-center justify-center">
+                <button className="bg-gray-100 border-2 border-gray-300 rounded-sm px-4 flex items-center justify-center hover:bg-gray-200 hover:border-gray-400 transition-colors duration-200">
                   All
                 </button>
-                <button className="bg-gray-100 border-2 border-gray-300 rounded-sm px-4">
+                <button className="bg-gray-100 border-2 border-gray-300 rounded-sm px-4 hover:bg-gray-200 hover:border-gray-400 transition-colors duration-200">
                   Favorate
                 </button>
-                <button className="bg-gray-100 border-2 border-gray-300 rounded-sm px-4">
+                <button className="bg-gray-100 border-2 border-gray-300 rounded-sm px-4 hover:bg-gray-200 hover:border-gray-400 transition-colors duration-200">
                   Pined
                 </button>
               </div>
