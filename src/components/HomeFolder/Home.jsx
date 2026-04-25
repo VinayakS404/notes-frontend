@@ -10,14 +10,38 @@ function Home() {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
 
-const bgColors = {
-  red: { bg: "bg-red-100", text: "text-red-700" },
-  blue: { bg: "bg-blue-100", text: "text-blue-700" },
-  green: { bg: "bg-green-100", text: "text-green-700" },
-  pink: { bg: "bg-pink-100", text: "text-pink-700" },
-  yellow: { bg: "bg-yellow-100", text: "text-yellow-700" },
-  white: { bg: "bg-white", text: "text-gray-800" },
-};
+  const bgColors = {
+    red: {
+      bg: "bg-red-100",
+      text: "text-red-700",
+      border: "border-red-300",
+    },
+    blue: {
+      bg: "bg-blue-100",
+      text: "text-blue-700",
+      border: "border-blue-300",
+    },
+    green: {
+      bg: "bg-green-100",
+      text: "text-green-700",
+      border: "border-green-300",
+    },
+    pink: {
+      bg: "bg-pink-100",
+      text: "text-pink-700",
+      border: "border-pink-300",
+    },
+    yellow: {
+      bg: "bg-yellow-100",
+      text: "text-yellow-700",
+      border: "border-yellow-300",
+    },
+    white: {
+      bg: "bg-gray-100",
+      text: "text-gray-700",
+      border: "border-gray-300",
+    },
+  };
 
   useEffect(() => {
     const getNotes = async () => {
@@ -91,11 +115,13 @@ const bgColors = {
                 console.log(items.colortag);
                 return (
                   <div
-                    className={` h-100 w-full ${dynamicColor.bg} flex flex-col p-5 rounded-2xl shadow-sm`}
+                    className={` h-100 w-full ${dynamicColor.bg} flex flex-col p-5 rounded-2xl shadow-sm border ${dynamicColor.border}`}
                     key={items.noteId}
                   >
                     <div className="h-20 w-full  flex items-center justify-between ">
-                      <p className={` text-xl font-bold ${dynamicColor.text} `}>{items.noteHeading}</p>
+                      <p className={` text-xl font-bold ${dynamicColor.text} `}>
+                        {items.noteHeading}
+                      </p>
                       <div className="flex items-center ">
                         <p className=" text-sm font-bold">
                           {items.noteAddedDate}
@@ -104,7 +130,9 @@ const bgColors = {
                     </div>
                     <div className="flex-1 w-full overflow-hidden bg-white rounded-xl p-5">
                       <div className=" flex ">
-                        <p className="text-sm bg-pink-300 px-3 py-1 text-pink-700 font-medium rounded">tag1</p>
+                        <p className="text-sm bg-pink-300 px-3 py-1 text-pink-700 font-medium rounded">
+                          tag1
+                        </p>
                       </div>
                       <p className=" line-clamp-9">{items.noteContent}</p>
                     </div>
