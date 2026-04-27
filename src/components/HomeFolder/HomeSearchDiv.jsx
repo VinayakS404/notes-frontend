@@ -3,7 +3,7 @@ import downIcon from "../../../assets/down.png";
 import removeGrayIcon from "../../../assets/remove-gray.png";
 function HomeSearchDiv() {
   return (
-    <div className=" w-full h-30  fixed left-0 flex justify-start  bg-white  z-5">
+    <div className=" w-full h-30  fixed left-0 flex justify-start  bg-white pl-52 z-5">
       <div className=" h-full w-[calc(100%-150px)] flex items-center justify-center gap-2">
         <div className="h-12 min-w-100 rounded-xl bg-white border-2 border-gray-300 gap-3 pl-3 flex items-center justify-start">
           <img src={searchIcon} alt="search icon" className="h-5 " />

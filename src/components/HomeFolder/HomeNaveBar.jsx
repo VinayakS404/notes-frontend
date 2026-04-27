@@ -1,8 +1,8 @@
 import userIcon from "../../../assets/user.png";
 const HomeNavBar = () => {
   return (
-    <nav className=" h-screen w-10 py-5 fixed left-8 text-white drop-shadow-sm z-10">
-      <div className="flex flex-col items-center justify-between bg-[#2A2A2A] h-full w-20 py-10 rounded-xl">
+    <nav className=" h-screen w-10 py-1 fixed left-1 text-white z-10">
+      <div className="flex flex-col items-center justify-between bg-[#2A2A2A] h-full w-18 py-10 rounded-xl">
         <div className="flex flex-col items-center gap-2">
           <div className="pb-5 ">
             <a href="/">MyApp</a>

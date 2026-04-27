@@ -5,6 +5,7 @@ import axios from "axios";
 import downIcon from "../../../assets/down.png";
 import fourSquare from "../../../assets/four-squares.png";
 import row from "../../../assets/row.png";
+import SideBar from "./SideBar.jsx";
 
 function Home() {
   const [notes, setNotes] = useState([]);
@@ -59,11 +60,12 @@ function Home() {
   }, []);
 
   return (
-    <div className="w-screen h-screen bg-sky-50  relative pb-3000 ">
+    <div className="w-screen h-screen bg-white  relative pb-3000  ">
       <div className="  flex justify-center">
         <HomeSearchDiv />
         <HomeNavBar />
-        <div className="flex flex-col w-300 mt-35 ml-20 rounded-xl">
+        <SideBar />
+        <div className="flex flex-col w-300 mt-35 ml-20 rounded-xl pl-30">
           <div className="px-10 flex flex-col gap-3">
             <div className="flex  items-center justify-between ">
               <div className="flex gap-2 items-center">
