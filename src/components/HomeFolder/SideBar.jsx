@@ -20,7 +20,7 @@ function SideBar() {
 
       <div className="flex items-center gap-1 pl-2 hover:bg-[#d7dee5] h-10 mr-2  rounded text-[#2A2A2A] font-medium">
         <img src={placeHolder} className="h-5 " />
-        <p>Apple</p>
+        <p>Applddde</p> 
       </div>
       <p className="text-gray-500 pl-2.5">this is a heading</p>
       <div className="flex items-center gap-1 pl-2 hover:bg-[#d7dee5] h-10 mr-2 rounded text-[#2A2A2A] font-medium">
