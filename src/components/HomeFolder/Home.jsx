@@ -45,14 +45,17 @@ function Home() {
       border: "border-gray-300",
     },
   };
+  const getLightColor = () => {
+    const r = Math.floor(Math.random() * 56) + 200; // 200–255
+    const g = Math.floor(Math.random() * 56) + 200;
+    const b = Math.floor(Math.random() * 56) + 200;
 
-  const getRandomColor = () => {
-    return (
-      "#" +
-      Math.floor(Math.random() * 16777215)
-        .toString(16)
-        .padStart(6, "0")
-    );
+    // avoid pure white
+    if (r === 255 && g === 255 && b === 255) {
+      return getLightColor();
+    }
+
+    return `rgb(${r}, ${g}, ${b})`;
   };
 
   useEffect(() => {
@@ -176,7 +179,8 @@ function Home() {
                     <div className="flex-1 w-full overflow-hidden bg-white rounded-xl p-5">
                       <div className=" flex gap-3 mb-3">
                         {items.noteTags.map((tag, index) => {
-                          const color = getRandomColor();
+                          const color = getLightColor();
+
                           return (
                             <p
                               key={index}
