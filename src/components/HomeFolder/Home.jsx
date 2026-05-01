@@ -166,9 +166,9 @@ function Home() {
                     </div>
                     <div className="flex-1 w-full overflow-hidden bg-white rounded-xl p-5">
                       <div className=" flex ">
-                        <p className="text-sm bg-pink-300 px-3 py-1 text-pink-700 font-medium rounded">
-                          tag1
-                        </p>
+                        {
+                          for iitems.length()
+                        }
                       </div>
                       <p className=" line-clamp-9">{items.noteContent}</p>
                     </div>
