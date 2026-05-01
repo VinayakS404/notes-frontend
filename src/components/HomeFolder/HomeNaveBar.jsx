@@ -3,6 +3,8 @@ import gearIcon from "../../../assets/settings_500dp_E3E3E3_FILL0_wght200_GRAD20
 import userIcon from "../../../assets/user.png";
 import darkModeIcon from "../../../assets/dark_mode_500dp_E3E3E3_FILL0_wght200_GRAD200_opsz48.png";
 import toolBarIcon from "../../../assets/toolbar_500dp_E3E3E3_FILL0_wght200_GRAD200_opsz48.png";
+import plusIcon from "../../../assets/add_2_500dp_FFFFFF_FILL0_wght200_GRAD200_opsz48.png";
+
 
 const HomeNavBar = () => {
   return (
@@ -25,6 +27,9 @@ const HomeNavBar = () => {
             </div>
             <div className="rounded hover:bg-[#404040] p-1 transition-colors duration-200">
               <img src={gearIcon} alt="userIcon" className="h-9" />
+            </div>
+            <div className="rounded hover:bg-[#404040] p-1 transition-colors duration-200">
+              <img src={plusIcon} alt="userIcon" className="h-9" />
             </div>
           </div>
 

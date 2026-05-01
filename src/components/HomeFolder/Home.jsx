@@ -185,7 +185,7 @@ function Home() {
                             <p
                               key={index}
                               style={{ backgroundColor: color }}
-                              className="text-sm font-medium px-2 rounded"
+                              className="text-sm font-medium px-2 rounded border border-gray-400"
                             >
                               {tag}
                             </p>
