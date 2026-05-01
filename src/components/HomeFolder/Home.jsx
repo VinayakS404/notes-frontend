@@ -46,6 +46,15 @@ function Home() {
     },
   };
 
+  const getRandomColor = () => {
+    return (
+      "#" +
+      Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, "0")
+    );
+  };
+
   useEffect(() => {
     const getNotes = async () => {
       try {
@@ -165,10 +174,19 @@ function Home() {
                       </div>
                     </div>
                     <div className="flex-1 w-full overflow-hidden bg-white rounded-xl p-5">
-                      <div className=" flex ">
-                        {
-                          for iitems.length()
-                        }
+                      <div className=" flex gap-3 mb-3">
+                        {items.noteTags.map((tag, index) => {
+                          const color = getRandomColor();
+                          return (
+                            <p
+                              key={index}
+                              style={{ backgroundColor: color }}
+                              className="text-sm font-medium px-2 rounded"
+                            >
+                              {tag}
+                            </p>
+                          );
+                        })}
                       </div>
                       <p className=" line-clamp-9">{items.noteContent}</p>
                     </div>
