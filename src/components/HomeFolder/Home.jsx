@@ -10,6 +10,7 @@ import SideBar from "./SideBar.jsx";
 function Home() {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isSquare, setIsSquare] = useState(false);
 
   const arr1 = [0, 1, 2, 3];
 
@@ -97,6 +98,9 @@ function Home() {
                   src={row}
                   alt="back arrow"
                   className="h-10  z-1 hover:bg-gray-200 p-1 rounded-md"
+                  /*onClick = {
+                    //testfunction 
+                  }*/
                 />
                 <img
                   src={fourSquare}
@@ -129,34 +133,41 @@ function Home() {
               </div>
             </div>
           ) : notes.length === 0 ? (
-            <div className="  grid grid-cols-3 gap-10 p-10 ">
-              {arr1.map(() => {
-                return (
-                  <div className="h-100 w-full flex flex-col p-5 rounded-2xl  bg-gray-50">
-                    <div className="h-20 w-full flex items-center justify-between">
-                      <div className="h-7 w-32 bg-gray-200 rounded shimmer-box"></div>
-                      <div className="h-7 w-20 bg-gray-200 rounded shimmer-box"></div>
-                    </div>
-
-                    <div className="flex-1 w-full bg-white rounded-xl p-5">
-                      <div className="flex gap-2">
-                        <div className="h-7 w-16 bg-gray-200 rounded shimmer-box"></div>
-                        <div className="h-7 w-16 bg-gray-200 rounded shimmer-box"></div>
+            isSquare ? (
+              <div className="grid grid-cols-3 gap-10 p-10">
+                {arr1.map((_, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="h-100 w-full flex flex-col p-5 rounded-2xl bg-gray-50"
+                    >
+                      <div className="h-20 w-full flex items-center justify-between">
+                        <div className="h-7 w-32 bg-gray-200 rounded shimmer-box"></div>
+                        <div className="h-7 w-20 bg-gray-200 rounded shimmer-box"></div>
                       </div>
 
-                      <div className="space-y-2 mt-5">
-                        <div className="h-4 w-56 bg-gray-200 rounded shimmer-box shimmer-box"></div>
-                        <div className="h-4 w-56 bg-gray-200 rounded shimmer-box"></div>
-                        <div className="h-4 w-56 bg-gray-200 rounded shimmer-box"></div>
-                        <div className="h-4 w-56 bg-gray-200 rounded shimmer-box"></div>
-                        <div className="h-4 w-40 bg-gray-200 rounded shimmer-box"></div>
+                      <div className="flex-1 w-full bg-white rounded-xl p-5">
+                        <div className="flex gap-2">
+                          <div className="h-7 w-16 bg-gray-200 rounded shimmer-box"></div>
+                          <div className="h-7 w-16 bg-gray-200 rounded shimmer-box"></div>
+                        </div>
+
+                        <div className="space-y-2 mt-5">
+                          <div className="h-4 w-56 bg-gray-200 rounded shimmer-box"></div>
+                          <div className="h-4 w-56 bg-gray-200 rounded shimmer-box"></div>
+                          <div className="h-4 w-56 bg-gray-200 rounded shimmer-box"></div>
+                          <div className="h-4 w-56 bg-gray-200 rounded shimmer-box"></div>
+                          <div className="h-4 w-40 bg-gray-200 rounded shimmer-box"></div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-          ) : (
+                  );
+                })}
+              </div>
+            ) : (
+              <div>Row Skeleton</div>
+            )
+          ) : isSquare ? (
             <div className="  grid grid-cols-3 gap-10 p-10 ">
               {notes.map((items) => {
                 const dynamicColor = bgColors[items.colortag] || "bg-gray-100";
@@ -198,7 +209,7 @@ function Home() {
                 );
               })}
             </div>
-          )}
+          ) : null}
         </div>
       </div>
     </div>
