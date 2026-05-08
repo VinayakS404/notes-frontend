@@ -98,9 +98,7 @@ function Home() {
                   src={row}
                   alt="back arrow"
                   className="h-10  z-1 hover:bg-gray-200 p-1 rounded-md"
-                  /*onClick = {
-                    //testfunction 
-                  }*/
+                  onClick={() => setIsSquare(!isSquare)}
                 />
                 <img
                   src={fourSquare}
@@ -165,7 +163,36 @@ function Home() {
                 })}
               </div>
             ) : (
-              <div>Row Skeleton</div>
+              <div className="grid grid-row-3 gap-10 p-10">
+                {arr1.map((_, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="h-100 w-full flex flex-col p-5 rounded-2xl bg-gray-50"
+                    >
+                      <div className="h-20 w-full flex items-center justify-between">
+                        <div className="h-13 w-100 bg-gray-200 rounded shimmer-box"></div>
+                        <div className="h-13 w-50 bg-gray-200 rounded shimmer-box"></div>
+                      </div>
+
+                      <div className="flex-1 w-full bg-white rounded-xl p-5">
+                        <div className="flex gap-2">
+                          <div className="h-9 w-25 bg-gray-200 rounded shimmer-box"></div>
+                          <div className="h-9 w-25 bg-gray-200 rounded shimmer-box"></div>
+                        </div>
+
+                        <div className="space-y-2 mt-5">
+                          <div className="h-4 w-full bg-gray-200 rounded shimmer-box"></div>
+                          <div className="h-4 w-full bg-gray-200 rounded shimmer-box"></div>
+                          <div className="h-4 w-full bg-gray-200 rounded shimmer-box"></div>
+                          <div className="h-4 w-full bg-gray-200 rounded shimmer-box"></div>
+                          <div className="h-4 w-140 bg-gray-200 rounded shimmer-box"></div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             )
           ) : isSquare ? (
             <div className="  grid grid-cols-3 gap-10 p-10 ">
