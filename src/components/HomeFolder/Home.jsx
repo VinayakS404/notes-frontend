@@ -12,7 +12,8 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [isSquare, setIsSquare] = useState(false);
 
-  const arr1 = [0, 1, 2, 3];
+  const arr1 = [0, 1, 2];
+  const arr2 = [0];
 
   const bgColors = {
     red: {
@@ -74,6 +75,8 @@ function Home() {
     getNotes();
   }, []);
 
+  
+
   return (
     <div className="w-screen h-screen bg-white  relative ">
       <div className="  flex justify-center">
@@ -94,17 +97,21 @@ function Home() {
                 </p>
               </div>
               <div className="flex items-center gap-3">
-                <img
-                  src={row}
-                  alt="back arrow"
-                  className="h-10  z-1 hover:bg-gray-200 p-1 rounded-md"
-                  onClick={() => setIsSquare(!isSquare)}
-                />
-                <img
-                  src={fourSquare}
-                  alt="back arrow"
-                  className="h-10 rotate-90 z-1 hover:bg-gray-200 p-1.5 rounded-md"
-                />
+                {isSquare ? (
+                  <img
+                    src={row}
+                    alt="back arrow"
+                    className="h-10  z-1 hover:bg-gray-200 p-1 rounded-md"
+                    onClick={() => setIsSquare(!isSquare)}
+                  />
+                ) : (
+                  <img
+                    src={fourSquare}
+                    alt="back arrow"
+                    className="h-10 rotate-90 z-1 hover:bg-gray-200 p-1.5 rounded-md"
+                    onClick={() => setIsSquare(!isSquare)}
+                  />
+                )}
               </div>
             </div>
             <div>
@@ -132,7 +139,7 @@ function Home() {
             </div>
           ) : notes.length === 0 ? (
             isSquare ? (
-              <div className="grid grid-cols-3 gap-10 p-10">
+              <div className="grid grid-cols-3 gap-10 p-10 ">
                 {arr1.map((_, index) => {
                   return (
                     <div
@@ -163,8 +170,10 @@ function Home() {
                 })}
               </div>
             ) : (
-              <div className="grid grid-row-3 gap-10 p-10">
-                {arr1.map((_, index) => {
+              
+              <div className="grid grid-row-3 gap-10 p-10 ">
+                {arr2.map((_, index) => {
+                  
                   return (
                     <div
                       key={index}
@@ -214,7 +223,7 @@ function Home() {
                         </p>
                       </div>
                     </div>
-                    <div className="flex-1 w-full overflow-hidden bg-white rounded-xl p-5">
+                    <div className="flex-1 w-full overflow-hidden bg-white rounded-xl p-5 ">
                       <div className=" flex gap-3 mb-3">
                         {items.noteTags.map((tag, index) => {
                           const color = getLightColor();
